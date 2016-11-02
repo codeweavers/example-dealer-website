@@ -27,5 +27,8 @@
             "replace": false,
             "merge-dev": false
         }
+    },
+    "require-dev": {
+        "barryvdh/laravel-ide-helper": "^2.2"
     }
 }

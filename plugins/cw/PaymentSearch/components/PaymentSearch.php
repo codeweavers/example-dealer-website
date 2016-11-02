@@ -1,7 +1,7 @@
 <?php namespace Cw\PaymentSearch\Components;
 
 use Cms\Classes\ComponentBase;
-use Illuminate\Support\Facades\URL;
+use Url;
 
 class PaymentSearch extends ComponentBase
 {

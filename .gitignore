@@ -15,4 +15,4 @@ nginx-ssl.error.log
 php-errors.log
 sftp-config.json
 selenium.php
-.phpstorm.meta.php
+_ide_helper.php
