@@ -1,0 +1,41 @@
+name: 'Main Navigation'
+items:
+    -
+        title: Vehicles
+        nesting: ''
+        type: cms-page
+        url: ''
+        code: ''
+        reference: payment-search
+        cmsPage: ''
+        replace: ''
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+    -
+        title: Finance
+        nesting: '0'
+        type: static-page
+        url: ''
+        code: ''
+        reference: finance
+        cmsPage: ''
+        replace: '0'
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+    -
+        title: 'Contact Us'
+        nesting: '0'
+        type: static-page
+        url: ''
+        code: ''
+        reference: contact-us
+        cmsPage: ''
+        replace: '0'
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
