@@ -1,1 +1,20 @@
-<p>{{ message }}</p>
+<ul>
+    {% for vehicle in message.VehicleResults %}
+        <li style="border:1px solid #ccc;">
+            <ul>
+                <li>Description: {{ vehicle.Description }}</li>
+                <li>Colour: {{ vehicle.Colour }}</li>
+                <li>Doors: {{ vehicle.Doors }}</li>
+                <li>EngineSize: {{ vehicle.EngineSize }}</li>
+                <li>FuelType: {{ vehicle.FuelType }}</li>
+                <li>Manufacturer: {{ vehicle.Manufacturer }}</li>
+                <li>Mileage: {{ vehicle.Mileage }}</li>
+                <li>Model: {{ vehicle.Model }}</li>
+                <li>RegistrationNumber: {{ vehicle.RegistrationNumber }}</li>
+                <li>Transmission: {{ vehicle.Transmission }}</li>
+                <li>VehicleType: {{ vehicle.VehicleType }}</li>
+                <li>Year: {{ vehicle.Year }}</li>
+            </ul>
+        </li>
+    {% endfor %}
+</ul>
