@@ -13,8 +13,24 @@ class PaymentSearch extends ComponentBase
         ];
     }
 
-    public function search()
+    public function defineProperties()
     {
+        return [
+            'query' => [
+                'title'   => 'Query',
+                'type'    => 'text',
+                'default' => ''
+            ]
+        ];
+    }
+
+    public function search($query = "")
+    {
+        if($query !== null && $query !== "")
+            $query = "'dealervehicleid:{$query}'";
+        else
+            $query = "";
+
         $url = 'https://services.codeweavers.net/public/v2/paymentsearch/search';
 
         $request = [
@@ -34,7 +50,7 @@ class PaymentSearch extends ComponentBase
             'Search' => [
                 'MinimumPayment' => 100,
                 'MaximumPayment' => 1000,
-                'Query' => ""
+                'Query' => $query
             ],
             'Options' => [
                 'HasProductsGroupedByVehicle' => true,
@@ -67,6 +83,6 @@ class PaymentSearch extends ComponentBase
 
     public function onRun()
     {
-        $this->page['message'] = $this->search();
+        $this->page['message'] = $this->search($this->property('query'));
     }
 }

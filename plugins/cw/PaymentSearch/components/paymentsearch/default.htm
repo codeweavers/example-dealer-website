@@ -14,6 +14,7 @@
                 <li>Transmission: {{ vehicle.Transmission }}</li>
                 <li>VehicleType: {{ vehicle.VehicleType }}</li>
                 <li>Year: {{ vehicle.Year }}</li>
+                <a href="/vehicle-details/{{ vehicle.DealerStockId }}"><li>StockId: {{ vehicle.DealerStockId }}</li></a>
             </ul>
         </li>
     {% endfor %}
