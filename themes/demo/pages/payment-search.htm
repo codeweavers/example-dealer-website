@@ -5,4 +5,38 @@ is_hidden = 0
 
 [search]
 ==
-{% component 'search' %}
+<div class="container">
+    <h1>Vehicle Search</h1>
+
+    <section id="results" class="vehicles">
+        <div class="row">
+            {% for vehicle in vehicles.VehicleResults %}
+                <div class="col-sm-4">
+                    <div class="card h-100">
+                        <img class="card-img-top w-100" src="https://d3he9si2xmpgay.cloudfront.net/stock/{{ vehicle.VehicleImage }}" alt="Card image cap">
+                        <div class="card-block">
+                            <h4 class="card-title">{{ vehicle.Description }}</h4>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                                card's content.</p>
+                            <ul>
+                                <li>Description: {{ vehicle.Description }}</li>
+                                <li>Colour: {{ vehicle.Colour }}</li>
+                                <li>Doors: {{ vehicle.Doors }}</li>
+                                <li>EngineSize: {{ vehicle.EngineSize }}</li>
+                                <li>FuelType: {{ vehicle.FuelType }}</li>
+                                <li>Manufacturer: {{ vehicle.Manufacturer }}</li>
+                                <li>Mileage: {{ vehicle.Mileage }}</li>
+                                <li>Model: {{ vehicle.Model }}</li>
+                                <li>RegistrationNumber: {{ vehicle.RegistrationNumber }}</li>
+                                <li>Transmission: {{ vehicle.Transmission }}</li>
+                                <li>VehicleType: {{ vehicle.VehicleType }}</li>
+                                <li>Year: {{ vehicle.Year }}</li>
+                            </ul>
+                            <a href="/vehicle-details/{{ vehicle.DealerStockId }}" class="btn btn-primary">More details</a>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </section>
+</div>

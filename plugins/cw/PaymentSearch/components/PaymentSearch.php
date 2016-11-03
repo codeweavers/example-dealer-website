@@ -83,6 +83,6 @@ class PaymentSearch extends ComponentBase
 
     public function onRun()
     {
-        $this->page['message'] = $this->search($this->property('query'));
+        $this->page['vehicles'] = $this->search($this->property('query'));
     }
 }
