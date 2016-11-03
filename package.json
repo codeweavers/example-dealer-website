@@ -1,0 +1,30 @@
+{
+  "name": "example-dealer-website",
+  "description": "An example of a dealership website showing off Codeweavers products and services.",
+  "repository": {
+    "url": "https://github.com/codeweavers/example-dealer-website.git",
+    "type": "git"
+  },
+  "scripts": {
+    "install": "gulp release"
+  }
+  "author": "Codeweavers Ltd",
+  "private": true,
+  "dependencies": {
+    "autoprefixer": "^6.5.1",
+    "bootstrap": "4.0.0-alpha.5",
+    "cssnano": "^3.8.0",
+    "del": "^2.2.2",
+    "font-awesome": "^4.7.0",
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.0",
+    "gulp-postcss": "^6.2.0",
+    "gulp-sass": "^2.3.2",
+    "gulp-sourcemaps": "^2.2.0",
+    "gulp-uglify": "^2.0.0",
+    "jquery": "^3.1.1",
+    "postcss-flexbugs-fixes": "^2.0.0",
+    "postcss-move-media": "^1.0.0-pre",
+    "sass-module-importer": "^1.2.1"
+  }
+}

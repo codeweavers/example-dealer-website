@@ -16,3 +16,4 @@ php-errors.log
 sftp-config.json
 selenium.php
 _ide_helper.php
+node_modules

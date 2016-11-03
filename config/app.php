@@ -29,7 +29,7 @@ return [
     |
     */
 
-    'url' => 'http://collection.codeweavers.localiis/',
+    'url' => '127.0.0.1',
 
     /*
     |--------------------------------------------------------------------------
@@ -81,7 +81,7 @@ return [
     |
     */
 
-    'key' => 'fWHtrMZYRnDFHrx2CtEtrnXPXwjzMDbN',
+    'key' => 'wNGsdoSBQOZQMPwxoVa8DUowEQ2uAick',
 
     'cipher' => 'AES-256-CBC',
 

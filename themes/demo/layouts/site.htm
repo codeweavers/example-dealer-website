@@ -1,0 +1,39 @@
+description = "Site layout"
+
+[staticMenu]
+code = "main-navigation"
+
+[staticPage]
+==
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>{{ this.page.title }} - Example Dealer Site</title>
+        <meta name="description" content="{{ this.page.meta_description }}">
+        <meta name="title" content="{{ this.page.meta_title }} - Codeweavers Collection">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="{{ 'dist/bootstrap.css'|theme }}" rel="stylesheet">
+        <link href="{{ 'dist/app.css'|theme }}" rel="stylesheet">
+        {% styles %}
+    </head>
+    <body>
+        <header id="header">
+            {% partial 'site/header' %}
+        </header>
+
+        <main id="content">
+            {% page %}
+        </main>
+
+        <footer id="footer">
+            {% partial 'site/footer' %}
+        </footer>
+
+        <script src="{{ 'dist/jquery.min.js'|theme }}"></script>
+        <script src="{{ 'dist/bootstrap.min.js'|theme }}"></script>
+        <script src="{{ 'dist/app.js'|theme }}"></script>
+        {% framework extras %}
+        {% scripts %}
+    </body>
+</html>
