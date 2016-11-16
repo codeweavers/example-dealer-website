@@ -7,7 +7,15 @@ is_hidden = 0
 ==
 <div class="container">
     <h1>Vehicle Search</h1>
-
+    <section id="filter" class="filter">
+        <form action="/payment-search" method="get">
+            <div class="form-group row">
+                <div class="col-xs-12">
+                    <input class="form-control" type="text" id="text-search" name="search" placeholder="Search by Model, Manufacturer, Year, Colour..." value="{{ search }}">
+                </div>
+            </div>
+        </form>
+    </section>
     <section id="results" class="vehicles">
         <div class="row">
             {% for vehicle in vehicles.VehicleResults %}

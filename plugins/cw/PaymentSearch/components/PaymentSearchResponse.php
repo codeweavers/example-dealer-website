@@ -8,17 +8,19 @@ class PaymentSearchResponse
     private $query;
     private $url;
 
-    public function __construct($query)
+    public function __construct($query, $isStockId)
     {
-        $this->validateQuery($query);
+        $this->validateQuery($query, $isStockId);
     }
 
-    private function validateQuery($query)
+    private function validateQuery($query, $isStockId)
     {
-        if ($query !== null && $query !== "")
+        if($query === null || $query === "")
+            $this->query = "";
+        else if ($isStockId)
             $this->query = "'dealervehicleid:{$query}'";
         else
-            $this->query = "";
+            $this->query = $query;
     }
 
     public function getFinance()

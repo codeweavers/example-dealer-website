@@ -1,6 +1,7 @@
 <?php namespace Cw\PaymentSearch\Components;
 
 use Cms\Classes\ComponentBase;
+use Illuminate\Support\Facades\Input;
 
 class PaymentSearch extends ComponentBase
 {
@@ -23,16 +24,25 @@ class PaymentSearch extends ComponentBase
         ];
     }
 
-    public function search($query = "")
+    public function search($query = "", $isStockId = false)
     {
-        $response = new PaymentSearchResponse($query);
+        $response = new PaymentSearchResponse($query, $isStockId);
         return $response->getFinance();
 
     }
 
     public function onRun()
     {
-        $this->page['vehicles'] = $this->search($this->property('query'));
+        if(Input::has('search'))
+        {
+            $this->page['search'] = Input::get('search');
+            $this->page['vehicles'] = $this->search(Input::get('search'));
+        }
+        else
+        {
+            $this->page['search'] = '';
+            $this->page['vehicles'] = $this->search($this->property('query'), true);
+        }
     }
 }
 
