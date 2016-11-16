@@ -7,7 +7,7 @@
   },
   "scripts": {
     "install": "gulp release"
-  }
+  },
   "author": "Codeweavers Ltd",
   "private": true,
   "dependencies": {
