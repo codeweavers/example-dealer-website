@@ -3,7 +3,144 @@ url = "/vehicle-details/:id"
 layout = "site"
 is_hidden = 0
 
-[search]
+[financeDetails]
 query = "{{ :id }}"
 ==
-{% component 'search' %}
+<div class="vehicle-details">
+
+    <section class="headline">
+        <div class="container">
+            <h1>2010 BMW 1 Series 2.0 118i SE (143 BHP)</h1>
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="gallery">
+                        <img src="https://www.netcarshow.com/Ford-Fiesta_ST200-2017-1280-04.jpg" class="img-fluid rounded">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div>
+                        <small>from</small>
+                        <span class="display-4">&pound;{{ finance.Quote.RegularPayment }}</span>
+                        <small>monthly</small>
+                    </div>
+                    <div class="display-4">&pound;{{ finance.Quote.CashPrice }}</div>
+                    <div class="actions">
+                        <button type="button" class="btn btn-primary btn-lg btn-block">Enquire Now</button>
+                        <button type="button" class="btn btn-secondary btn-lg btn-block">Book a Test Drive</button>
+                        <a href="#finance" class="btn btn-secondary btn-lg btn-block">Finance Options</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="overview" class="bg-faded p-2">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-2 col-sm-4 col-xs-6 reg-year">
+                    <img class="img-fluid" src=""/>
+                    <span class="value reg-year">2010(59)</span>
+                </div>
+                <div class="col-md-2 col-sm-4 col-xs-6 mileage">
+                    <img class="img-fluid" src=""/>
+                    <span class="value mileage">37,396 miles</span>
+                </div>
+                <div class="col-md-2 col-sm-4 col-xs-6 engine-size">
+                    <img class="img-fluid" src=""/>
+                    <span class="value engine-size">2l</span>
+                </div>
+                <div class="col-md-2 col-sm-4 col-xs-6 transmission">
+                    <img class="img-fluid" src=""/>
+                    <span class="value transmission">Manual</span>
+                </div>
+                <div class="col-md-2 col-sm-4 col-xs-6 fuel-type">
+                    <img class="img-fluid" src=""/>
+                    <span class="value fuel-type">Petrol</span>
+                </div>
+                <div class="col-md-2 col-sm-4 col-xs-6 mpg">
+                    <img class="img-fluid" src=""/>
+                    <span class="value mpg">46.3 mpg</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="specification">
+        <div class="container">
+
+            <h2>Specification</h2>
+            <p>
+                Bacon ipsum dolor amet hamburger rump landjaeger pastrami jowl doner bacon pork belly capicola ground
+                round
+                burgdoggen ball tip shankle ham. Rump strip steak picanha ground round beef ribs. Pork jowl corned beef
+                pork
+                chop, meatloaf flank biltong picanha alcatra. Fatback ham hock chicken ribeye, corned beef pork
+                tenderloin
+                burgdoggen. Short ribs bacon kielbasa ball tip alcatra leberkas.
+            </p>
+        </div>
+    </section>
+
+    <section id="features" class="bg-primary p-2">
+        <div class="container">
+
+            <h2>Features</h2>
+            <p>
+                Bacon ipsum dolor amet hamburger rump landjaeger pastrami jowl doner bacon pork belly capicola ground
+                round
+                burgdoggen ball tip shankle ham. Rump strip steak picanha ground round beef ribs. Pork jowl corned beef
+                pork
+                chop, meatloaf flank biltong picanha alcatra. Fatback ham hock chicken ribeye, corned beef pork
+                tenderloin
+                burgdoggen. Short ribs bacon kielbasa ball tip alcatra leberkas.
+            </p>
+        </div>
+    </section>
+
+    <section id="finance">
+        <div class="container">
+            <h2>Finance Options</h2>
+            <p>
+                Bacon ipsum dolor amet hamburger rump landjaeger pastrami jowl doner bacon pork belly capicola ground
+                round
+                burgdoggen ball tip shankle ham. Rump strip steak picanha ground round beef ribs. Pork jowl corned beef
+                pork
+                chop, meatloaf flank biltong picanha alcatra. Fatback ham hock chicken ribeye, corned beef pork
+                tenderloin
+                burgdoggen. Short ribs bacon kielbasa ball tip alcatra leberkas.
+            </p>
+        </div>
+    </section>
+
+    <section id="warranty">
+        <div class="container">
+            <h2>Warranty</h2>
+            <p>
+                Bacon ipsum dolor amet hamburger rump landjaeger pastrami jowl doner bacon pork belly capicola ground
+                round
+                burgdoggen ball tip shankle ham. Rump strip steak picanha ground round beef ribs. Pork jowl corned beef
+                pork
+                chop, meatloaf flank biltong picanha alcatra. Fatback ham hock chicken ribeye, corned beef pork
+                tenderloin
+                burgdoggen. Short ribs bacon kielbasa ball tip alcatra leberkas.
+            </p>
+        </div>
+    </section>
+
+    <section class="contact-us">
+        <div class="container">
+            <h2>Contact Us</h2>
+            <p>
+                Bacon ipsum dolor amet hamburger rump landjaeger pastrami jowl doner bacon pork belly capicola ground
+                round
+                burgdoggen ball tip shankle ham. Rump strip steak picanha ground round beef ribs. Pork jowl corned beef
+                pork
+                chop, meatloaf flank biltong picanha alcatra. Fatback ham hock chicken ribeye, corned beef pork
+                tenderloin
+                burgdoggen. Short ribs bacon kielbasa ball tip alcatra leberkas.
+            </p>
+        </div>
+    </section>
+    <section class="similar"></section>
+
+</div>

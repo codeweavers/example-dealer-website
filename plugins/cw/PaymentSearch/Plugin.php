@@ -17,7 +17,8 @@ class Plugin extends PluginBase
     public function registerComponents()
     {
         return [
-            '\Cw\PaymentSearch\Components\PaymentSearch' => 'search'
+            '\Cw\PaymentSearch\Components\PaymentSearch' => 'search',
+            '\Cw\PaymentSearch\Components\FinanceDetails' => 'financeDetails'
         ];
     }
 }
