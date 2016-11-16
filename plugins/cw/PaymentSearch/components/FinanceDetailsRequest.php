@@ -1,13 +1,12 @@
 <?php
 namespace Cw\PaymentSearch\Components;
 
-class PaymentSearchRequest
+class FinanceDetailsRequest
 {
     public $Credentials;
     public $Customer;
     public $Parameters;
-    public $Search;
-    public $Options;
+    public $VehicleRequests;
 
     public function setCredentials($apiKey, $systemKey)
     {
@@ -31,23 +30,16 @@ class PaymentSearchRequest
         $this->Parameters->AnnualMileage = $annualMileage;
     }
 
-    public function setSearch($minimumPayment, $maximumPayment, $query)
+    public function setVehicleRequests($id, $stockId)
     {
-        $this->Search = new \stdClass();
-        $this->Search->MinimumPayment = $minimumPayment;
-        $this->Search->MaximumPayment = $maximumPayment;
-        $this->Search->Query = $query;
-    }
-
-    public function setOptions($hasProductsGroupedByVehicle, $returnErrors, $sortBy, $pageNumber, $resultsPerPage, $includeVehiclesWithNoDescription)
-    {
-        $this->Options = new \stdClass();
-        $this->Options->HasProductsGroupedByVehicle = $hasProductsGroupedByVehicle;
-        $this->Options->ReturnErrors = $returnErrors;
-        $this->Options->SortBy = $sortBy;
-        $this->Options->PageNumber = $pageNumber;
-        $this->Options->ResultsPerPage = $resultsPerPage;
-        $this->Options->IncludeVehiclesWithNoDescription = $includeVehiclesWithNoDescription;
+        $this->VehicleRequests = [
+            [
+                'Id' => $id,
+                'Vehicle' => [
+                    'StockId' => $stockId
+                ]
+            ]
+        ];
     }
 
     public function getJson()

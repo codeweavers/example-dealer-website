@@ -1,36 +1,36 @@
 <?php
 namespace Cw\PaymentSearch\Components;
 
+use Psy\Exception\ErrorException;
 use Illuminate\Support\Facades\URL;
 
-class PaymentSearchResponse
+class FinanceDetailsResponse
 {
-    private $query;
+    private $stockId;
     private $url;
 
-    public function __construct($query)
+    public function __construct($stockId)
     {
-        $this->validateQuery($query);
+        $this->validateStockId($stockId);
     }
 
-    private function validateQuery($query)
+    private function validateStockId($stockId)
     {
-        if ($query !== null && $query !== "")
-            $this->query = "'dealervehicleid:{$query}'";
-        else
-            $this->query = "";
+        if ($stockId === null || $stockId === "")
+            throw new ErrorException("Stock Id not provided");
+
+        $this->stockId = $stockId;
     }
 
     public function getFinance()
     {
-        $this->url = 'https://services.codeweavers.net/public/v2/paymentsearch/search';
+        $this->url = 'https://services.codeweavers.net/public/v3/JsonFinance/Calculate';
 
-        $request = new PaymentSearchRequest();
+        $request = new FinanceDetailsRequest();
         $request->setCredentials(env('CW_API_KEY'), env('CW_SYSTEM_KEY'));
         $request->setCustomerReference("SESSIONID");
         $request->setParameters("36", "10", "Percentage", "10000");
-        $request->setSearch(100, 1000, $this->query);
-        $request->setOptions(true, false, "RegularPaymentDescending", 1, 50, "true");
+        $request->setVehicleRequests("1234", $this->stockId);
 
         $headers = [
             'http' => [
@@ -49,7 +49,7 @@ class PaymentSearchResponse
 
         try {
             $response = json_decode(file_get_contents($this->url, false, $context));
-            return $response;
+            return $response->VehicleResults[0]->FinanceProductResults[0];
         } catch (\Exception $e) {
             return 'Something went wrong';
         }
