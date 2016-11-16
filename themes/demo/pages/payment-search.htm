@@ -13,7 +13,7 @@ is_hidden = 0
             {% for vehicle in vehicles.VehicleResults %}
                 <div class="col-sm-4">
                     <div class="card h-100">
-                        <img class="card-img-top w-100" src="https://d3he9si2xmpgay.cloudfront.net/stock/{{ vehicle.VehicleImage }}" alt="Card image cap">
+                        <img class="card-img-top w-100" src="{{ vehicle.VehicleImage }}" alt="Card image cap">
                         <div class="card-block">
                             <h4 class="card-title">{{ vehicle.Description }}</h4>
                             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
